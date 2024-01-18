@@ -18,6 +18,7 @@ function Signup() {
 
   const handleSignIn = async () => {
     try {
+      console.log(formValues);
       const { email, password } = formValues;
       await createUserWithEmailAndPassword(firebaseAuth, email, password);
     } catch (error) {
@@ -25,9 +26,9 @@ function Signup() {
     }
   };
 
-  onAuthStateChanged(firebaseAuth, (currentUser) => {
-    if (currentUser) navigate("/");
-  });
+  // onAuthStateChanged(firebaseAuth, (currentUser) => {
+  //   if (currentUser) navigate("/");
+  // });
 
   return (
     <Container showPassword={showPassword}>
