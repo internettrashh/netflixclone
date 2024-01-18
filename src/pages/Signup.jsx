@@ -17,12 +17,17 @@ function Signup() {
   const navigate = useNavigate();
 
   const handleSignIn = async () => {
-   console.log(formValues)
+    try {
+      const { email, password } = formValues;
+      await createUserWithEmailAndPassword(firebaseAuth, email, password);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  /*onAuthStateChanged(firebaseAuth, (currentUser) => {
-  if (currentUser) navigate("/");
-  });*/
+  onAuthStateChanged(firebaseAuth, (currentUser) => {
+    if (currentUser) navigate("/");
+  });
 
   return (
     <Container showPassword={showPassword}>
