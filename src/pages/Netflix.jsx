@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/NavBar";
 import backgroundImage from "../assets/home.jpg";
@@ -6,7 +6,7 @@ import MovieLogo from "../assets/homeTitle.webp";
 
 //import { onAuthStateChanged } from "firebase/auth";
 //import { firebaseAuth } from "../utils/Firebase";
-import { useNavigate } from "react-router-dom";
+
 //import { useSelector, useDispatch } from "react-redux";
 //import { fetchMovies, getGenres } from "../store";
 import { FaPlay } from "react-icons/fa";
@@ -17,7 +17,7 @@ function Netflix() {
 const [isScrolled, setScrolled]=useState(false);
 
 
-const navigate = useNavigate();
+
 
 window.onscroll = () =>{
   setScrolled(window.pageYOffset === 0 ? false :true );
@@ -40,10 +40,10 @@ window.onscroll = () =>{
         <div className="buttons flex">
           <button
         
-            className="flex j-center a-center"  onClick={() => navigate("/player")}
+            className="flex j-center a-center" 
           >
-            <FaPlay />
-            Play
+            <FaPlay /><a href="https://www.youtube.com/watch?v=a3thyAnShck">Play</a>
+            
           </button>
           <button className="flex j-center a-center">
             <AiOutlineInfoCircle />
