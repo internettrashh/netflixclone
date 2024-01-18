@@ -59,6 +59,7 @@ export default function Navbar({ isScrolled }) {
             signOut(firebaseAuth);
             window.location.href = "/login";
           }}>
+                        <FaPowerOff />
           </button>
         </div>
       </nav>
