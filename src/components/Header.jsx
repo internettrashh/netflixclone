@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Netflix() {
+function Header() {
   return (
     <div>
-      
+      head
     </div>
   )
 }
 
-export default Netflix
+export default Header
