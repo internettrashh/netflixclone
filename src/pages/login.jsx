@@ -22,9 +22,9 @@ function Login() {
     }
   };
 
-  // // onAuthStateChanged(firebaseAuth, (currentUser) => {
-  // //   if (currentUser) navigate("/");
-  // });
+  onAuthStateChanged(firebaseAuth, (currentUser) => {
+    if (currentUser) navigate("/");
+  });
 
   return (
     <Container>

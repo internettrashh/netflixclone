@@ -26,9 +26,9 @@ function Signup() {
     }
   };
 
-  // onAuthStateChanged(firebaseAuth, (currentUser) => {
-  //   if (currentUser) navigate("/");
-  // });
+  onAuthStateChanged(firebaseAuth, (currentUser) => {
+     if (currentUser) navigate("/");
+   });
 
   return (
     <Container showPassword={showPassword}>
