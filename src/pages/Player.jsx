@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import video from "../assets/y2mate.com - Stranger Things Season 4 Trailer  Rotten Tomatoes TV_v720P.mp4";
+import video from "../assets/vid.mp4";
 
 function Player() {
     const navigate = useNavigate();
