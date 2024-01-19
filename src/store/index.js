@@ -51,21 +51,14 @@ export const fetchMovies = createAsyncThunk(
     const {
       netflix: { genres },
     } = thunkAPI.getState();
-
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjQ4OTMwMmE1NzFlMzM4Nzk5YzQ5ODhjMDkzMzczNyIsInN1YiI6IjY1YTk5MjFiNWNlYTE4MDEzN2MwZjJjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.h1_kZjQDYGjICQC59pxf_2sOK4VkOwUwKlnoCTqR9zk'
-      }
-    };
-
-    const response = await fetch(`https://api.themoviedb.org/3/trending/${type}/day?language=en-US`, options);
-    const data = await response.json();
-
-    return getRawData(data, genres, true);
+    return getRawData(
+      'https://api.themoviedb.org/3/movie/popular?api_key=455c026cdba1d4666c6d0bed168a1040',
+      genres,
+      true
+    );
   }
 );
+
 
 const NetflixSlice = createSlice({
   name: "Netflix",
@@ -78,15 +71,7 @@ const NetflixSlice = createSlice({
      builder.addCase(fetchMovies.fulfilled, (state, action) => {
       state.movies = action.payload;
      });
-    // builder.addCase(fetchDataByGenre.fulfilled, (state, action) => {
-    //   state.movies = action.payload;
-    // });
-    // builder.addCase(getUsersLikedMovies.fulfilled, (state, action) => {
-    //   state.movies = action.payload;
-    // });
-    // builder.addCase(removeMovieFromLiked.fulfilled, (state, action) => {
-    //   state.movies = action.payload;
-    // });
+   
   },
 });
 
